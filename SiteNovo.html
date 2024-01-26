@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Menu Lateral</title>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#home">Início</a>
+        <a href="#about">Sobre</a>
+        <a href="#services">Serviços</a>
+        <a href="#Perfil">Perfil</a>
+        <p class="copyright">© 2024 NexusEducation</p>
+    </div>
+
+    <div class="content">
+        <h2>Seja Bem Vindo, User!</h2>
+        <div class="container">
+            <img src="Logo.png" class="aligned-image">
+            <input type="text" id="searchInput" placeholder="Pesquisa">
+            <button type="submit" onclick="search()">Buscar</button>
+        </div>
+
+        <section>
+            <br><br><br>
+            <strong>Alice</strong>
+            <p>Explore com entusiasmo esta guia de matemática, repleta de conhecimentos envolventes que não apenas consolidarão sua compreensão, mas também aprofundarão sua paixão pela disciplina.</p>
+            <button type="button" id="newPostButton1" onclick="showPost(1)">Ver Post</button>
+            <div id="postContent1"></div>
+            <hr>
+
+            <strong>Bob</strong>
+            <p>Descubra o mais recente acréscimo ao nosso material educacional: uma fonte enriquecedora de conhecimentos sobre Física, projetada para expandir seu entendimento e despertar ainda mais o seu fascínio pelo universo das ciências.</p>
+            <button type="button" id="newPostButton2" onclick="showPost(2)">Ver Post</button>
+            <div id="postContent2"></div>
+            <hr>
+
+            <strong>Carl</strong>
+            <p>Convido você a aprender geografia explorando livros didáticos como "Geografia Geral e do Brasil" de João Carlos Moreira e Eustáquio de Sene, ou "Geografia - Espaço e Vivência" de Sonia Maria Vanzella Castellar e Sônia Regina C. de Souza.</p>
+            <button type="button" id="newPostButton3" onclick="showPost(3)">Ver Post</button>
+            <div id="postContent3"></div>
+            <hr>
+
+            <strong>Cristine</strong>
+            <p>Convido você a explorar o fascinante mundo da filosofia através dos livros que publiquei como "O Mundo como Vontade e Representação" de Arthur Schopenhauer, ou "Meditações" de Marco Aurélio.</p>
+            <button type="button" id="newPostButton4" onclick="showPost(4)">Ver Post</button>
+            <div id="postContent4"></div>
+            <hr>
+
+            <strong>Jhon</strong>
+            <p>Incentivo você a descobrir o universo da química, como "Química Geral" de Raymond Chang e "Princípios de Química: Questionando a Vida Moderna e o Meio Ambiente" de Peter Atkins. Essas obras proporcionam uma compreensão sólida e envolvente dos princípios químicos essenciais.</p>
+            <button type="button" id="newPostButton5" onclick="showPost(5)">Ver Post</button>
+            <div id="postContent5"></div>
+        </section>
+    </div>
+
+    <style>
+          body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial';
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    background-color: #111;
+    padding-top: 20px;
+    font-family: 'Arial';
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.copyright {
+    color: #818181;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 750px;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 16px;}
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  width: 90px;
+  height: 40px;
+  background-color: #e7ecee;
+}
+
+button:hover {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 40px;
+  font-size: 15px;
+}
+
+.container {
+  position: absolute;
+  top: 7%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  }
+
+section {
+  position: absolute;
+  font-family: 'Verdana';
+}
+
+hr {
+    border: 1px solid #ccc;
+    margin: 20px 0; 
+    width: 1600px;
+}
+
+img {
+  align: right;
+  position: absolute;
+  top: 50%;
+  left: 230%;
+  transform: translate(-50%, -50%);
+}
+    </style>
+
+    <script>
+        function showPost(postNumber) {
+            // Esconder todos os posts antes de exibir o próximo
+            hidePosts();
+
+            var postContent = "<p>oi " + postNumber + "...</p>"; // Substitua pelo conteúdo real do post
+            document.getElementById("postContent" + postNumber).innerHTML = postContent;
+        }
+
+        function hidePosts() {
+            // Esconder todos os posts
+            for (var i = 1; i <= 5; i++) {
+                document.getElementById("postContent" + i).innerHTML = "";
+            }
+        }
+
+        function search() {
+            // Adicione a lógica de busca aqui
+        }
+    </script>
+</body>
+</html>
